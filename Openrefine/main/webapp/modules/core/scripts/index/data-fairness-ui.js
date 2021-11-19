@@ -73,17 +73,8 @@ Refine.SetDataQualityUI = function(elmt) {
 
 	this._elmt = elmt;
 	this._elmts = DOM.bind(elmt);
-
-
-
-	if ($(this._elmt).attr('DOM_ID').indexOf('profiling') > -1) {
-		DOM_ID = 'data-profiling-body';
-	} else if ($(this._elmt).attr('DOM_ID').indexOf('quality') > -1) {
-		DOM_ID = 'data-quality-body';
-	} else if ($(this._elmt).attr('DOM_ID').indexOf('fairness') > -1) {
-		DOM_ID = 'data-fairness-body';
-	}
-	// DOM_ID = $(this._elmt).attr('DOM_ID').indexOf('profiling') > -1 ? 'data-profiling-body' : 'data-quality-body'
+	
+	DOM_ID = $(this._elmt).attr('DOM_ID').indexOf('profiling') > -1 ? 'data-profiling-body' : 'data-quality-body'
 	ui = DOM.bind($("#"+DOM_ID));
 
 	// initialzed
@@ -92,14 +83,7 @@ Refine.SetDataQualityUI = function(elmt) {
 };
 
 Refine.SetDataQualityUI.prototype._getDOM_ID = function() {
-	// DOM_ID = $(this._elmt).attr('DOM_ID').indexOf('profiling') > -1 ? 'data-profiling-body' : 'data-quality-body';
-	if ($(this._elmt).attr('DOM_ID').indexOf('profiling') > -1) {
-		DOM_ID = 'data-profiling-body';
-	} else if ($(this._elmt).attr('DOM_ID').indexOf('quality') > -1) {
-		DOM_ID = 'data-quality-body';
-	} else if ($(this._elmt).attr('DOM_ID').indexOf('fairness') > -1) {
-		DOM_ID = 'data-fairness-body';
-	}
+	DOM_ID = $(this._elmt).attr('DOM_ID').indexOf('profiling') > -1 ? 'data-profiling-body' : 'data-quality-body';	
 }
 Refine.SetDataQualityUI.prototype._hasOwnProperty = function(self, elmtsId) {
 	return self._elmts.hasOwnProperty(elmtsId);
@@ -305,14 +289,13 @@ Refine.SetDataQualityUI.prototype._btnSetting = function() {
 		UI_CHART_INFO.tableName = selected.attr('tableName')
 		UI_CHART_INFO.selectedPId = _self._elmts.project_selectbox.val();
 
-		let keyBtn = $('#'+DOM_ID+' .page-key-btn');
-		if (keyBtn !== undefined) {
+		if (_self._elmts.sec_btns !== undefined) {
 			if (UI_CHART_INFO.tableName !== null && UI_CHART_INFO.tableName !== undefined && UI_CHART_INFO.tableName !== '') {
 				// 버튼 표시
-				keyBtn.show();
+				_self._elmts.sec_btns.show();
 			} else {
 				// 버튼 가림
-				keyBtn.hide();
+				_self._elmts.sec_btns.hide();
 			}
 		}
 		setTimeout(()=>{
@@ -648,8 +631,7 @@ Refine.SetDataQualityUI.prototype.resize = function() {
 /**
  * SetDataQualityUI used two section.
  * 1. Data profiling. 
- * 2. Data Quality.
- * 3. Data Fairness
+ * 2. Data Quality. 
  */
 Refine.actionAreas.push({
 	id : "data-profiling-ui",
@@ -660,11 +642,5 @@ Refine.actionAreas.push({
 Refine.actionAreas.push({
 	id : "data-quality-ui",
 	label : $.i18n('core-index-data/evaluation-index-title'),
-	uiClass : Refine.SetDataQualityUI
-});
-
-Refine.actionAreas.push({
-	id : "data-fairness-ui",
-	label : $.i18n('core-index-data/data-fairness-title'),
 	uiClass : Refine.SetDataQualityUI
 });

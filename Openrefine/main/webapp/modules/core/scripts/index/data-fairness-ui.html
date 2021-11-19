@@ -1,4 +1,4 @@
-<div id="data-quality-body" class="data-quality">
+<div id="data-fairness-body" class="data-quality">
 	<div class="data-quality-top">
 		<div class="projects-group">
 			<label bind="project_select_lebel"></label>
@@ -7,15 +7,15 @@
 		</div>
 		<div class="btn-group">
 			<div class="btn-popup">
-				<button bind="get_evaluation_index" class="btn-right"  style="display:none"></button>
-				<button bind="open_web_data_quality" class="page-key-btn" style="display:none;"></button>
+				<button bind="get_evaluation_index" class="btn-right" style="display:none"></button>
+				<button bind="open_web_fairness" class="page-key-btn" style="display:none;"></button>
 			</div>
 			<div class="select_all_warpper" style="display:none;">
-				<button bind="open_web_fairness"></button>
+				<button bind="open_web_data_quality"></button>
 			</div>
 		</div>
 	</div>
-	
+
 	<div class="data-quality-bottom">
 		<div class="bottom-grid" >
 			<div class="project_table" bind="project_table" ></div>

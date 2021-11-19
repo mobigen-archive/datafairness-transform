@@ -111,8 +111,9 @@
     "core-index-dialog-ei/navi3": "품질평가",
     "core-index-dialog-ei/navi4": "품질보정",
     "core-index-data/evaluation-index-title": "데이터 품질평가",
-    "core-index-data/data-quality" : "DQ RULE",
-    "core-index-data/fairness" : "FAIRNESS",
+    "core-index-data/data-quality" : "Rule 설정",
+    "core-index-data/fairness" : "공정성 설정",
+    "core-index-data/data-fairness-title" :"데이터 공정성 평가",
     
 	"core-index-data-ei/left-title-column-name": "데이터 셋(컬럼명)",    
 	"core-index-data-ei/left-title-evaluation-index": "품질 지표",

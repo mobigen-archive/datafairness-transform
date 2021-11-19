@@ -779,10 +779,11 @@
     "core-index-dialog-ei/navi3": "Evaluation",
     "core-index-dialog-ei/navi4": "Editing",
     "core-index-data/evaluation-index-title": "Quality Assessment",
-    "core-index-data/data-quality" : "DQ RULE",
-    "core-index-data/fairness" : "FAIRNESS",
-    
-	"core-index-data-ei/left-title-column-name": "Dataset(Column Name)",    
+    "core-index-data/data-quality" : "Rules",
+    "core-index-data/fairness" : "Fairness",
+    "core-index-data/data-fairness-title" :"Data Fairness",
+
+    "core-index-data-ei/left-title-column-name": "Dataset(Column Name)",
 	"core-index-data-ei/left-title-evaluation-index": "Evaluation Index",
 	"core-index-data-ei/left-title-test-column": "Test Column",
 	"core-index-data-ei/left-title-corrected-column": "Edit Column",
